@@ -37,5 +37,5 @@ for k in 2 4 8 16 32 64 128 256; do
     diff -q Image_data/${input}-$k.membership Image_data/${input}.membership
 
     speedup=$(echo "scale=1; ${seqTime} / ${cudaTime}" | bc)
-    echo "k = $(printf "%3d" $k)  seqTime = ${seqTime}s  ompTime = ${ompTime}s mpiTime= ${mpiTime}  cudaTime = ${cudaTime}s  max_speedup = ${speedup}x"
+    echo "k = $(printf "%3d" $k)  seqTime = ${seqTime}s  ompTime = ${ompTime}s  cudaTime = ${cudaTime}s  max_speedup = ${speedup}x"
 done
