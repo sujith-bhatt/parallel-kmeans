@@ -25,7 +25,21 @@
         name[i] = name[i-1] + yDim;                         \
 } while (0)
 
+#ifdef __CUDACC__
+inline void checkCuda(cudaError_t e) {
+    if (e != cudaSuccess) {
+        err("CUDA Error %d: %s\n", e, cudaGetErrorString(e));
+    }
+}
+
+inline void checkLastCudaError() {
+    checkCuda(cudaGetLastError());
+}
+#endif
+
+float** omp_kmeans(int, float**, int, int, int, float, int*);
 float** seq_kmeans(float**, int, int, int, float, int*, int*);
+float** cuda_kmeans(float**, int, int, int, float, int*, int*);
 
 float** file_read(int, char*, int*, int*);
 int     file_write(char*, int, int, int, float**, int*);

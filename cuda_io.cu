@@ -1,5 +1,5 @@
 
-/*   File:         file_io.c                                                 */
+/*   File:         cuda_io.cu                                                */
 /*   Description:  This program reads point data from a file                 */
 /*                 and write cluster output to files                         */
 /*   Input file format:                                                      */

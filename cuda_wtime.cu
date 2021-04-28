@@ -1,5 +1,4 @@
-
-/*   File:         wtime.c                                                   */
+/*   File:         cuda_wtime.cu                                             */
 /*   Description:  a timer that reports the current wall time                */
 /*                                                                           */
 /*   Author:  K Sujith Bhatt                                                 */
@@ -36,3 +35,4 @@ int main(int argc, char **argv) {
     return 0;
 }
 #endif
+
